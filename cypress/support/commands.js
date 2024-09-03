@@ -23,3 +23,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("ClickOnProductByProductName", (Product) => {
+  cy.get(".fixed_wrapper .prdocutname").each(($el, index, $list) => {
+    cy.log("Index " + index + " : " + $el.text());
+    if ($el.text() === "Eau Parfumee au The Vert Shampoo") {
+      cy.wrap($el).click();
+    }
+  });
+});

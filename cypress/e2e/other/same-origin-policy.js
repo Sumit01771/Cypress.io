@@ -6,11 +6,11 @@ describe("Cypress web security", () => {
     cy.visit("https://www.google.com/");
   });
 
-  it.skip("Validate visiting two different domains via user actions", () => {
+  it("Validate visiting two different domains via user actions", () => {
     cy.visit("https://www.webdriveruniversity.com/");
     cy.get("#automation-test-store").invoke("removeAttr", "target").click();
   });
-  it("Visting multiple superdomains via origin command", () => {
+  it.skip("Visting multiple superdomains via origin command", () => {
     cy.origin("webdriveruniversity.com", () => {
       cy.visit("/");
     });
